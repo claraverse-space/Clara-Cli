@@ -1,0 +1,45 @@
+{
+  "name": "clara-cli",
+  "version": "1.0.0",
+  "description": "A terminal-based AI agent that executes commands through natural language",
+  "main": "dist/index.js",
+  "bin": {
+    "clara": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/cli.js",
+    "test": "jest",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "cli",
+    "ai",
+    "terminal",
+    "assistant",
+    "llm",
+    "openai",
+    "anthropic"
+  ],
+  "author": "Clara <claraverse.space@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "chalk": "^4.1.2",
+    "commander": "^11.1.0",
+    "cosmiconfig": "^9.0.0",
+    "inquirer": "^8.2.6",
+    "ora": "^5.4.1",
+    "shelljs": "^0.8.5"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.7",
+    "@types/node": "^20.10.5",
+    "@types/shelljs": "^0.8.15",
+    "typescript": "^5.3.3"
+  }
+}
