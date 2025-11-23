@@ -26,8 +26,14 @@ export class ConfigManager {
         this.config = JSON.parse(data);
         return this.config;
       }
-    } catch (error) {
-      console.error('Error loading config:', error);
+    } catch (error: any) {
+      if (error.code === 'EACCES') {
+        throw new Error(`Permission denied reading config file: ${CONFIG_FILE}`);
+      } else if (error instanceof SyntaxError) {
+        throw new Error(`Invalid JSON in config file: ${CONFIG_FILE}. Please run 'clara setup' to reconfigure.`);
+      } else {
+        throw new Error(`Failed to load config: ${error.message}`);
+      }
     }
     return null;
   }

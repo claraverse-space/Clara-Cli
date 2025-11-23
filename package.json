@@ -24,6 +24,14 @@
   ],
   "author": "Clara <claraverse.space@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/claraverse-space/Clara-Cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/claraverse-space/Clara-Cli/issues"
+  },
+  "homepage": "https://github.com/claraverse-space/Clara-Cli#readme",
   "engines": {
     "node": ">=18.0.0"
   },

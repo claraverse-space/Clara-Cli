@@ -7,8 +7,7 @@ const DESTRUCTIVE_PATTERNS = [
   { pattern: /mkfs/, reason: 'Attempting to format a filesystem' },
   { pattern: /:()\s*{\s*:\|:&\s*};:/, reason: 'Fork bomb detected' },
   { pattern: /chmod\s+-R\s+777/, reason: 'Setting dangerous permissions recursively' },
-  { pattern: />.*\/dev\/sda/, reason: 'Attempting to write to primary disk device' },
-  { pattern: />.*\/dev\/null/, reason: 'Redirecting to /dev/null (data loss)' },
+  { pattern: />.*\/dev\/sd[a-z]/, reason: 'Attempting to write to disk device' },
   { pattern: /curl.*\|\s*bash/, reason: 'Piping remote content directly to bash (security risk)' },
   { pattern: /wget.*\|\s*sh/, reason: 'Piping remote content directly to shell (security risk)' },
 ];
